@@ -1,16 +1,12 @@
 package com.acme.domain;
 
 public class Service implements Product{
-	public Service(String n, int dur, boolean tAndM) {
-		super();
-		this.name = n;
-		this.estimatedTaskDuration = dur;
-		this.timeAndMaterials = tAndM;
-	}
+
 	
 	private String name;
 	private int estimatedTaskDuration;
 	private boolean timeAndMaterials;
+	
 	public String getName() {
 		return name;
 	}
@@ -34,4 +30,10 @@ public class Service implements Product{
 		return name + " (a " + estimatedTaskDuration + " day service)";
 	}
 	
+	public Service(String n, int dur, boolean tAndM) {
+		super();
+		this.name = n;
+		this.estimatedTaskDuration = dur;
+		this.timeAndMaterials = tAndM;
+	}
 }

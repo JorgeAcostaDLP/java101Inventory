@@ -69,9 +69,9 @@ public class Order {
 	public boolean isPriorityOrder() {
 		boolean priorityOrder = false;
 		
-		if( rushable != null ) {
+		if (rushable != null ) {
 			priorityOrder = rushable.isRushable(orderDate, orderAmount);
-		}
+			}
 		
 		return priorityOrder;
 	}
@@ -118,7 +118,6 @@ public class Order {
 		
 		if (orderAmount <= 1500) orderTotal = orderTotal + tax;
 		return orderTotal;
-		
 	}
 	
 	public char jobSize() {
@@ -136,7 +135,7 @@ public class Order {
 		}
 	}
 	
-	public String toString(){
+	public String toString() {
 		return quantity + " ea. " + product + " for " + customer; 
 	}
 

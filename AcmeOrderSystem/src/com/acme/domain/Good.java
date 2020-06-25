@@ -37,36 +37,33 @@ public abstract class Good implements Product, Comparable<Good>{
 		 catalog.add(oil);
 
 	 }
-	 
-	 public int compareTo(Good o) {
-		 return getName().compareTo(o.getName());
-		 }
-	 
+	public abstract double volume();
+
 	public static Set<Good> flammablesList() {
 		Set<Good> flammables = new HashSet<>();
 		Iterator<Good> i = Good.getCatalog().iterator(); 
 		
 		while (i.hasNext()) {
-			
 			Good x = (Good) i.next(); 
 				
 				if (x.isFlammable()) {
 					flammables.add(x); }
 		 	}
-		
-		   return flammables;
-		}
+		return flammables;
+	}
 	 
 	public static List<Good> getCatalog() {
-		  return catalog;
+		return catalog;
 	}
 	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public int getModelNumber() {
 		return modelNumber;
 	}
@@ -98,6 +95,15 @@ public abstract class Good implements Product, Comparable<Good>{
 		this.weightPerUofM = weightPerUofM;
 	}
 	
+	 public int compareTo(Good o) {
+		return getName().compareTo(o.getName());
+	}
+	 
+	public String toString() {
+		return name + "-" + modelNumber;
+	}
+		
+		
 	public Good(String name, int modelNumber, double height, UnitOfMeasureType unitOfMeasure, boolean flammable,
 	double weightPerUofM) {
 		super();
@@ -109,11 +115,6 @@ public abstract class Good implements Product, Comparable<Good>{
 		this.weightPerUofM = weightPerUofM;
 	}
 	
-	public String toString() {
-		return name + "-" + modelNumber;
-	}
-	
-	public abstract double volume();
 	
 	public double weight() {
 		  return volume() * weightPerUofM;
@@ -122,9 +123,6 @@ public abstract class Good implements Product, Comparable<Good>{
 	public final boolean canShipViaPostOffice() { 
 		
 		if (this.flammable == false && this.getWeightPerUofM() > 200) return true;
-		
 		return false;
-		
 	}
-	
 }

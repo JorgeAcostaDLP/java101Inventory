@@ -31,6 +31,7 @@ public class Solid extends Good {
 	public String toString() {
 		return super.toString() + " that is " + volume() + " " + getUnitOfMeasure() + " in size";
 	}
+	
 //	 public final boolean canShipViaPostOffice() {
 //		return true;
 //	}

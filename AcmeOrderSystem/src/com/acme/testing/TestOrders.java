@@ -1,16 +1,7 @@
 package com.acme.testing;
 import com.acme.domain.Service;
 
-import java.lang.reflect.Array;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
-import java.util.Arrays;
-import java.util.Formatter;
 
 import com.acme.domain.Good.UnitOfMeasureType;
 import com.acme.domain.Order;
@@ -56,23 +47,20 @@ public class TestOrders {
 		Order birdEradication = new Order(date4, 20000, "Daffy Duck", s3, 1);
 		System.out.println("The total bill for: " + birdEradication + " is " + birdEradication.computeTotal());
 		System.out.println("The length of the anvil is: " + ((Solid) anvil.getProduct()).getLength());
-		 
 		MyDate hammerDate = new MyDate( 5, 17, 2016 );
 		Solid hammerType = new Solid( "Acme Hammer", 281, 0.3,
 		UnitOfMeasureType.CUBIC_METER, false, 100, 0.25, 0.3 ); Order hammer = new Order( hammerDate, 10.00, "Wile E Coyote",hammerType, 10 );
 		 
-		 //Testing Priority
+		 //Testing Priority using LocalDate
 		 Order.setRushable((orderDate, orderAmount) -> {
 			 LocalDate now = LocalDate.now();
 			 LocalDate orderDatePlus30 = LocalDate.of(orderDate.getYear(), orderDate.getMonth(), orderDate.getDay());
 			 orderDatePlus30 = orderDatePlus30.plusMonths(1);
 			 return  orderAmount > 1500 && now.isAfter(orderDatePlus30);
-		 });
-		 
+		 }); 
 		 System.out.println("Anvil isPriorityOrder: " + anvil.isPriorityOrder());
 		 System.out.println("Balloons isPriorityOrder: " + balloons.isPriorityOrder());
 		 System.out.println("Hammer isPriorityOrder: " + hammer.isPriorityOrder());
 	}
-
 }
 

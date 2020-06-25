@@ -21,82 +21,6 @@ public class MyDate {
 		holidays[4] = new MyDate(11,24,2016);
 		holidays[5] = new MyDate(12,25,2016);
 	}
-	 public static MyDate[] getHolidays(){
-		  return holidays;
-	 }
-	
-	public boolean equals(Object o) {
-		if(o instanceof MyDate) {
-			MyDate d = (MyDate) o;
-			if ((d.day == day) && (d.month == month) && (d.year == year)) {
-			      return true;
-			 }
-		}
-	  return false;
-		
-	}
-
-	public static void listHolidays() { 
-		System.out.println("the holidays are:"); 
-		for (MyDate holiday:holidays){
-		System.out.println(holiday); }
-		}
-	
-	private boolean valid(int day, int month, int year) {
-		if (day > 31 || day < 1 || month > 12 || month < 1 ){
-			System.out.println("NOT VALID");
-		    return false;
-		}
-		switch (month){
-		case 4:
-		case 6:
-		case 9:
-		case 11: return (day <=30);
-		case 2: return day <= 28 || (day ==29 && year % 4 ==0);
-		}
-		return true;
-		
-	}
-	
-	public MyDate() {
-		numDates++;
-//		System.out.println(numDates + " dates created");
-		
-	}
-	
-	public static void delCount() {
-		numDates=0;
-	}
-
-	
-	public MyDate(int m, int d, int y) {
-		this();
-		if(valid(d,m,y)) setDate(m,d,y);
-	}
-	
-	public String toString() {
-		String stringDate = new String();
-		stringDate = this.month + "/" + this.day + "/" + this.year;
-		return stringDate;
-	}
-	
-	public void setDate(int m, int d, int y) {
-		if(valid(d,m,y)){
-			month = (byte) m;
-			day = (byte) d;
-			year = (short) y;
-			}
-	}
-	
-	public static void leapYears() {
-		
-		for(int year = 1752; year <=2020; year++) {
-		
-			if(year % 4 == 0 && year % 100 != 0 || year % 4 == 0 && year % 400 == 0) {
-				System.out.println("The year " + year + " is a leap year");
-			} 
-		}
-	}
 
 	public int getDay() {
 		return day;
@@ -122,5 +46,75 @@ public class MyDate {
 		if(valid(day, month, year)) this.year = (short) year;
 	}
 	
+	public void setDate(int m, int d, int y) {
+		if(valid(d,m,y)) {
+			month = (byte) m;
+			day = (byte) d;
+			year = (short) y;
+		}
+	}
 	
+	public static void delCount() {
+		numDates=0;
+	}
+	
+	public boolean equals(Object o) {
+		if(o instanceof MyDate) {
+			MyDate d = (MyDate) o;
+			if ((d.day == day) && (d.month == month) && (d.year == year)) {
+			      return true;
+			 }
+		}
+	  return false;	
+	}
+	
+	public static void leapYears() {
+		
+		for (int year = 1752; year <=2020; year++) {
+			if(year % 4 == 0 && year % 100 != 0 || year % 4 == 0 && year % 400 == 0) {
+				System.out.println("The year " + year + " is a leap year");
+			} 
+		}
+	}
+
+	public static void listHolidays() { 
+		System.out.println("the holidays are:"); 
+		for (MyDate holiday:holidays){
+		System.out.println(holiday); }
+	}
+	
+	public String toString() {
+		String stringDate = new String();
+		stringDate = this.month + "/" + this.day + "/" + this.year;
+		return stringDate;
+	}
+	
+	private boolean valid(int day, int month, int year) {
+	
+		if (day > 31 || day < 1 || month > 12 || month < 1 ){
+			System.out.println("NOT VALID");
+		    return false;
+		}
+		switch (month){
+		case 4:
+		case 6:
+		case 9:
+		case 11: return (day <=30);
+		case 2: return day <= 28 || (day ==29 && year % 4 ==0);
+		}
+		return true;
+	}
+
+	public static MyDate[] getHolidays(){
+		  return holidays;	
+	}
+	 
+	 public MyDate() {
+			numDates++;		
+	}
+		
+	public MyDate(int m, int d, int y) {
+			this();
+			if(valid(d,m,y)) setDate(m,d,y);
+	}	
 }

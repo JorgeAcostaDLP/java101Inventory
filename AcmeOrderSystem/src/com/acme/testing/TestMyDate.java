@@ -7,8 +7,9 @@ public class TestMyDate{
 		System.out.println(MyDate.numDates );
 		MyDate.numDates++;
 		MyDate date1 = new MyDate(11,11,1918);
-
 		MyDate date2 = new MyDate();
+
+		//testing setters and getters
 		date2.setDay(11);
 		date2.setMonth(11);
 		date2.setYear(1918);
@@ -16,6 +17,7 @@ public class TestMyDate{
 		MyDate date3 = new MyDate();
 		date3.setDate(4,21,1968);
 
+		//testing toString
 		String str1 = date1.toString();
 		String str2 = date2.toString();
 		String str3 = date3.toString();
@@ -32,13 +34,14 @@ public class TestMyDate{
 		MyDate.delCount();	
 		System.out.println(MyDate.numDates);
 
-
+		//testing .equals()
 		date3.setDate(13, 40, -1);
 		 MyDate newYear = new MyDate(1,1,2009); 
 		 MyDate fiscalStart = new MyDate(1,1,2008);
 		 if (newYear.equals(fiscalStart)) System.out.println("These two dates are equal");
-		 else
-		 System.out.println("These two dates are not equal");
+		 else System.out.println("These two dates are not equal");
+
+		 //testing method
 		 MyDate.listHolidays();
 	}
 }
