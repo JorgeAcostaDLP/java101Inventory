@@ -80,39 +80,46 @@ public abstract class Good implements Product, Comparable<Good>{
 	public void setHeight(double height) {
 		this.height = height;
 	}
-	
 	public UnitOfMeasureType getUnitOfMeasure() {
 		return unitOfMeasure;
 	}
-	
 	public void setUnitOfMeasure(UnitOfMeasureType unitOfMeasure) {
 		this.unitOfMeasure = unitOfMeasure;
 	}
-	
 	public boolean isFlammable() {
 		return flammable;
 	}
-	
 	public void setFlammable(boolean flammable) {
 		this.flammable = flammable;
 	}
-	
 	public double getWeightPerUofM() {
 		return weightPerUofM;
 	}
-	
 	public void setWeightPerUofM(double weightPerUofM) {
 		this.weightPerUofM = weightPerUofM;
 	}
 	
-	public int compareTo(Good o) {
+	 public int compareTo(Good o) {
 		return getName().compareTo(o.getName());
 	}
 	 
 	public String toString() {
 		return name + "-" + modelNumber;
 	}
-				
+		
+		
+	public Good(String name, int modelNumber, double height, UnitOfMeasureType unitOfMeasure, boolean flammable,
+	double weightPerUofM) {
+		super();
+		this.name = name;
+		this.modelNumber = modelNumber;
+		this.height = height;
+		this.unitOfMeasure = unitOfMeasure;
+		this.flammable = flammable;
+		this.weightPerUofM = weightPerUofM;
+	}
+	
+	
 	public double weight() {
 		  return volume() * weightPerUofM;
 	}
@@ -122,16 +129,4 @@ public abstract class Good implements Product, Comparable<Good>{
 		if (this.flammable == false && this.getWeightPerUofM() > 200) return true;
 		return false;
 	}
-
-	public Good(String name, int modelNumber, double height, UnitOfMeasureType unitOfMeasure, boolean flammable,
-			double weightPerUofM) {
-				super();
-				this.name = name;
-				this.modelNumber = modelNumber;
-				this.height = height;
-				this.unitOfMeasure = unitOfMeasure;
-				this.flammable = flammable;
-				this.weightPerUofM = weightPerUofM;
-			}
-
 }

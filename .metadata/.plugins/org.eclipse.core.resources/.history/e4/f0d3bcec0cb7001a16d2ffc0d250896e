@@ -95,7 +95,6 @@ public class MyDate {
 			System.out.println("NOT VALID");
 		    return false;
 		}
-		
 		switch (month){
 		case 4:
 		case 6:
@@ -103,21 +102,19 @@ public class MyDate {
 		case 11: return (day <=30);
 		case 2: return day <= 28 || (day ==29 && year % 4 ==0);
 		}
-		
 		return true;
 	}
 
 	public static MyDate[] getHolidays(){
-		  
-		return holidays;	
+		  return holidays;	
 	}
 	 
-	public MyDate() {
-		numDates++;		
+	 public MyDate() {
+			numDates++;		
 	}
 		
 	public MyDate(int m, int d, int y) {
-		this();
-		if(valid(d,m,y)) setDate(m,d,y);
+			this();
+			if(valid(d,m,y)) setDate(m,d,y);
 	}	
 }

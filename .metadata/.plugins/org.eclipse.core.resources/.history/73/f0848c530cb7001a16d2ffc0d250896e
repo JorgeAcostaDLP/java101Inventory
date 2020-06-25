@@ -9,6 +9,7 @@ import com.acme.domain.Good.UnitOfMeasureType;
 
 public class TestGoods {
 
+
 	public static void main(String[] args) {
 		
 		//Liquid and Solid testing

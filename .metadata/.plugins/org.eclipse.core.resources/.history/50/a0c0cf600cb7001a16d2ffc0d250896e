@@ -1,6 +1,8 @@
 package com.acme.testing;
 import com.acme.domain.Service;
+
 import java.time.LocalDate;
+
 import com.acme.domain.Good.UnitOfMeasureType;
 import com.acme.domain.Order;
 import com.acme.domain.Solid;
@@ -13,7 +15,6 @@ public class TestOrders {
 	/**
 	 * @param args
 	 */
-	
 	public static void main(String[] args) {
 		
 		//Testing Order
