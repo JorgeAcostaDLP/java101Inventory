@@ -2,7 +2,6 @@ package com.acme.testing;
 
 import com.acme.domain.Good;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.Collections;
 import com.acme.domain.Liquid;
 import com.acme.domain.Solid;
@@ -47,8 +46,7 @@ public class TestGoods {
 		Good.getCatalog().add(toaster);
 		System.out.println(Good.getCatalog());
 		System.out.println("Flammable products: " + Good.flammablesList());
-		List<Good> goodList = new ArrayList<Good>(Good.getCatalog());
-		Collections.sort(goodList); 
+		Collections.sort((HashSet<Good>) Good.getCatalog()); 
 		System.out.println(Good.getCatalog());
 		 
 	}

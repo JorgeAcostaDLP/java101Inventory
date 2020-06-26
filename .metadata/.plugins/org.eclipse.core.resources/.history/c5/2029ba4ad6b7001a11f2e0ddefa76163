@@ -2,7 +2,6 @@ package com.acme.testing;
 
 import com.acme.domain.Good;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.Collections;
 import com.acme.domain.Liquid;
 import com.acme.domain.Solid;
@@ -41,14 +40,13 @@ public class TestGoods {
 
 		//Test static catalog + sort
 		System.out.println(Good.getCatalog());
-		Good.getCatalog().remove(1);
+		Good.getCatalog().remove('paint');
 		Solid toaster = new Solid("Acme Toaster", 1755, 0.75, UnitOfMeasureType.CUBIC_FEET, false, 1.0, 1.0, 1.0); 
 		Good.getCatalog().add(toaster); 
 		Good.getCatalog().add(toaster);
 		System.out.println(Good.getCatalog());
 		System.out.println("Flammable products: " + Good.flammablesList());
-		List<Good> goodList = new ArrayList<Good>(Good.getCatalog());
-		Collections.sort(goodList); 
+		Collections.sort((List<Good>) Good.getCatalog()); 
 		System.out.println(Good.getCatalog());
 		 
 	}

@@ -15,7 +15,7 @@ public abstract class Good implements Product, Comparable<Good>{
 	private UnitOfMeasureType unitOfMeasure;
 	private	 boolean flammable = true;
 	private double weightPerUofM;
-	private static HashSet<Good> catalog;
+	private static List<Good> catalog;
 	
 	static { 
 		 Liquid glue = new Liquid("Acme Glue", 2334, 4, UnitOfMeasureType.LITER,false, 15, 6);
@@ -26,7 +26,7 @@ public abstract class Good implements Product, Comparable<Good>{
 		 Solid pistol = new Solid("Acme Disintegrating Pistol", 1587, 0.1,UnitOfMeasureType.CUBIC_FEET, false, 1, 0.5, 2);
 		 Liquid nitro = new Liquid("Acme Nitroglycerin", 4289, 1.0,UnitOfMeasureType.CUBIC_METER, true, 1.5, 0.25);
 		 Liquid oil = new Liquid("Acme Oil", 4275, 1.0,UnitOfMeasureType.CUBIC_METER, true, 1.5, 0.25);
-		 catalog = new HashSet<Good>(); 
+		 catalog = new ArrayList<Good>(); 
 		 catalog.add(glue); 
 		 catalog.add(paint); 
 		 catalog.add(anvil); 
@@ -53,7 +53,7 @@ public abstract class Good implements Product, Comparable<Good>{
 		return flammables;
 	}
 	 
-	public static HashSet<Good> getCatalog() {
+	public static List<Good> getCatalog() {
 		return catalog;
 	}
 	
