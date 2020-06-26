@@ -35,11 +35,22 @@ public abstract class Good implements Product, Comparable<Good>{
 		 catalog.add(pistol); 
 		 catalog.add(nitro); 
 		 catalog.add(oil);
-
 	 }
 	
 	public abstract double volume();
 
+	public static void removeItem(Good g) {
+		Good toDel = null;
+		for(Good good : catalog) {
+			if(good.name == g.getName()){
+				System.out.println("Good found and Deleted");
+				toDel = good;
+			}		 
+		}
+		catalog.remove(toDel);
+	
+	}
+	
 	public static Set<Good> flammablesList() {
 		Set<Good> flammables = new HashSet<>();
 		Iterator<Good> i = Good.getCatalog().iterator(); 

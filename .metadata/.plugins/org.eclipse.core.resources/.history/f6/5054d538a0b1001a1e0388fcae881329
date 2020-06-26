@@ -1,6 +1,0 @@
-package com.acme.testing;
-
-public class Rata {
-	int d =3;
-	
-}
