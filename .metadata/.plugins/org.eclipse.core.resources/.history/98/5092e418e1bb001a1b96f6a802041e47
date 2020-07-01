@@ -1,0 +1,107 @@
+package com.acme.testing;
+
+import java.util.Arrays;
+
+import com.acme.utils.MyDate;
+
+public class PassByExperiment {
+
+	//Object and Primitive
+	
+//	public static void passObject(MyDate d) {
+//		d.setYear(2009);
+//	}
+//	
+//	public static void passPrimitive(int i) {
+//		i = 2010;
+//	}
+//	
+//	public static void passString(String s) {
+//		int yearSlash = s.lastIndexOf('/');
+//		s = s.substring(0, yearSlash + 1);
+//		s += "2012";
+//		System.out.println("New date string: " + s);
+//	}
+//	
+//	public static void passStringBuilder(StringBuilder s) {
+//		int yearSlash = s.lastIndexOf("/")+1;
+//		s.replace(yearSlash, s.length(), "2012");
+//		System.out.println("New date subString: " + s);
+//	}
+//	
+	static int a = 10;
+	public static void main(String[] args) {
+//		MyDate date = new MyDate(1,20,2008);
+//		System.out.println("Before passing an object " + date); 
+//		passObject(date);
+//		System.out.println("After passing an object " + date);
+//		System.out.println("Before passing a primitive " + date.getYear()); 
+//		passPrimitive(date.getYear());
+//		System.out.println("After passing a primitive " + date.getYear());
+//		String x = date.toString(); 
+//		System.out.println("Before passing a String " + x); 
+//		passString(x);
+//		System.out.println("After passing a String " + x); 
+//		StringBuilder sb = new StringBuilder(date.toString());
+//		passStringBuilder(sb);
+//	
+// //	Problem 1
+//		int []a = {1,2,3,4,5,6};
+//		int i = a.length-1;
+//	
+//		while(i>=0) {
+//			System.out.print(a[i]);
+//			i--;
+//		}
+//	}
+
+// //	Problem 2
+//		int x=0, y=10;
+//		try {
+//			y/=x;
+//			}
+//		System.out.print("/ by 0");
+//		catch(Exception e) {
+//			System.out.print("error");
+//			}
+//
+// //		Problem 5
+//		int a[] = {1,2,3,4,5};
+//		System.out.print(a instanceof Object);
+		
+// //		Problem 6
+//		int a[] = { 1,2,053,4}; //int with a 0 in fron is octal
+//		int c = 053;
+//		int b[][] = { {1,2,4} , {2,2,1},{0,43,2}};
+//		System.out.print(a[3]==b[0][2]);
+//		System.out.print(" " + (a[2]==b[2][1]));
+
+////		Problem 7
+//		int a[][] = new int[3][]; //second dimension can change
+// //		Second dimension in array is optional in Java. You can create a two dimensional array without specifying both dimension 
+// //		e.g. int[4][] is valid array declaration.The reason behind that is Java doesn't support multi-dimensional array in true 
+// //		sense. In a true two dimensional array all the elements of array occupy a contiguous block of memory , but that's not true in Java.
+// //		Instead a multi-dimensional array is an array of array. 
+//		a[1] = new int[] {1,2,3};
+//		a[2] = new int[] {4,5};
+//		a[0] = new int[] {1,2,3,4,5,6,7,89};
+//		System.out.println(a[1][1]);
+//		System.out.print(Arrays.deepToString(a));
+//	}	
+	
+//	class Ex1 {
+//		int a=10;
+//		public static void main(String[] args) {
+//			new Ex1().print();
+//		}
+//		public void print() {
+//			int a=8; //looks here first for a (local)
+//			System.out.print(a+ " ");
+	
+
+//	for(int a =0; a<5; a++) {
+//		System.out.print(a); //local a is reasigned to 0
+//	}
+//	System.out.print(a); //local variable not found goes to static
+	}
+	}

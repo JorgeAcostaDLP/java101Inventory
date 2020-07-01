@@ -1,0 +1,43 @@
+package com.acme.testing;
+
+//Problem 11
+//public class Person {
+//	Person(String s, int i){
+//		++pid;
+//		name=s;
+//		age=i;
+//		}
+//	
+//	static int pid;
+//	int age;
+//	String name;
+//	}
+//
+//class Test{
+//	public static void main(String[] args) {
+//		Person p1 = new Person("John" , 22);
+//		Test te = new Test();
+//		Person p2 = te.change(p1);
+//		System.out.println(p2.pid + " " + p2.name+ " "+p2.age);
+//		System.out.println(p1.pid + " " + p1.name+ " "+p1.age);
+//	}
+//
+//	private Person change(Object o) {
+//		Person p2 = (Person)o; //this changes the ref p2 to point to object created at p1 declaration
+//		p2.age = 25; //this alters p1 person object
+//		return p2;
+//		}
+//	}
+
+class Person{
+	public static void main(String args[]) {
+		int x=10; //cant change this because it is a primitive
+		int y= new Person().change(x); 
+		System.out.print(x+y);
+
+	}
+	int change (int x) { //.change means change it to 12 no matter what
+		x=12;
+		return x;
+	}
+}
